@@ -20,7 +20,7 @@ $sub = $n1 - $n2;
 
 
 
-echo "A soma de 6 + 3 é " . $soma . ", a multiplicação é " . $mult . ", a divisão é " . $div . " e a subtração é " . $sub;
+echo "A soma de 6 + 3 é $soma, a multiplicação é $mult, a divisão é $div e a subtração é $sub";
 
 
 
