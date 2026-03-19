@@ -9,7 +9,12 @@ $TotalDesc;
 $Desc;
 $freteGratis = false;
 
-if ( $programa == "Cliente Comum" && $conta > 500) {
+if ($programa == "Cliente Comum" && $conta < 500) {
+    $TotalDesc = $conta;
+    $Desc = 0;
+}
+
+elseif ( $programa == "Cliente Comum" && $conta > 500) {
     $Desc = $conta * 0.05;
     $TotalDesc = $conta - $Desc;
     if($conta > 1000) {
@@ -17,7 +22,7 @@ if ( $programa == "Cliente Comum" && $conta > 500) {
     }
 }
 
-if ( $programa == "Cliente VIP") {
+elseif ( $programa == "Cliente VIP") {
     $Desc = $conta * 0.1;
     $TotalDesc = $conta - $Desc;
     if($conta > 1000) {
@@ -25,7 +30,7 @@ if ( $programa == "Cliente VIP") {
     }
 }
 
-if ( $programa == "Cliente Premium" && $conta > 1000) {
+elseif ( $programa == "Cliente Premium" && $conta > 1000) {
     $Desc = $conta * 0.15;
     $TotalDesc = $conta - $Desc;
     $freteGratis = true;
