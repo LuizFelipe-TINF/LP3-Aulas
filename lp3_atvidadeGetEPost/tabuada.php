@@ -10,7 +10,6 @@ $numeroTabuada = $_GET['numeroTabuad'] ?? "";
 
         <div class="alert alert-info shadow border-info text-center" style="width: 450px;">
             <hr>
-            
             <p>Por favor, informe um número para realizar o cálculo.</p>
 
             <hr>
@@ -43,7 +42,7 @@ $numeroTabuada = $_GET['numeroTabuad'] ?? "";
                         <?php for ($i = 1; $i <= 10; $i++): ?>
                             <tr>
                                 <td class="fs-5 text-secondary"><?php echo "$numeroTabuada x $i"; ?></td>
-                                <td class="fs-5 fw-bold text-primary"> = <?php echo $numeroTabuada * $i; ?></td>
+                                <td class="fs-5 fw-bold text-secundary"> = <?php echo $numeroTabuada * $i; ?></td>
                             </tr>
                         <?php endfor; ?>
                     </tbody>
