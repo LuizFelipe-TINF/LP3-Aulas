@@ -8,7 +8,6 @@ $adicionais = $_POST['adicionais'] ?? [];
 
 $valorLanche = $custoFixo;
 
-if (!empty($adicionais)) {
 
     foreach ($adicionais as $item) {
 
@@ -17,8 +16,6 @@ if (!empty($adicionais)) {
         if ($item == "cebola") $valorLanche += 2;
         if ($item == "hamburguer") $valorLanche += 5;
     }
-}
-
 
 
 ?>
@@ -50,13 +47,10 @@ if (!empty($adicionais)) {
             <p class="fs-5">Lista de adicionais:</p>
 
             <?php 
-            if (!empty($adicionais)) {
                 foreach ($adicionais as $item) {
                     echo "<div class='text-primary'>$item</div>";
                 }
-            } else {
-                echo "<div class='text-secondary'>Nenhum adicional selecionado</div>";
-            }
+           
             ?>
 
             <hr>
