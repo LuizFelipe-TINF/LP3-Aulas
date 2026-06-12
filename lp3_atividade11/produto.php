@@ -9,7 +9,7 @@ abstract class Produto
     private float $precoBase;
     private int $quantidadeEstoque;
 
-    public bool $isAtivo;
+    private bool $isAtivo;
 
 
     public function adicionarEstoque(int $quantidade): void
