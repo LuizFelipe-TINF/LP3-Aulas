@@ -3,11 +3,11 @@
 abstract class Produto
 {
 
-    public int $codigo;
-    public string $nome;
-    public string $descricao;
-    public float $precoBase;
-    public int $quantidadeEstoque;
+    private int $codigo;
+    private string $nome;
+    private string $descricao;
+    private float $precoBase;
+    private int $quantidadeEstoque;
 
     public bool $isAtivo;
 
