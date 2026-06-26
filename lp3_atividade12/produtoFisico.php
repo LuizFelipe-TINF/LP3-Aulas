@@ -8,6 +8,15 @@ class ProdutoFisico extends Produto
     private float $custoFreteFixo;
     private string $transportadoraParceira;
 
+    public function __construct( int $codigo, string $nome, string $descricao, float $precoBase, int $quantidadeEstoque, bool $isAtivo, float $peso, string $dimensoesCxLxA, float $custoFreteFixo, string $transportadoraParceira) {
+        
+    parent::__construct( $codigo, $nome, $descricao, $precoBase, $quantidadeEstoque, $isAtivo);
+
+    $this->peso = $peso;
+    $this->dimensoesCxLxA = $dimensoesCxLxA;
+    $this->custoFreteFixo = $custoFreteFixo;
+    $this->transportadoraParceira = $transportadoraParceira;
+}
 
     public function getPeso(): float
     {
@@ -22,7 +31,7 @@ class ProdutoFisico extends Produto
     {
         return $this->dimensoesCxLxA;
     }
-    public function setDImensoesCxLxA(string $dimensoesCxLxA): void
+    public function setDimensoesCxLxA(string $dimensoesCxLxA): void
     {
         $this->dimensoesCxLxA = $dimensoesCxLxA;
     }
@@ -33,16 +42,15 @@ class ProdutoFisico extends Produto
     }
     public function setCustoFreteFixo(float $custoFreteFixo): void
     {
-        
         $this->custoFreteFixo = $custoFreteFixo;
-        
+        ;
     }
 
     public function getTransportadoraParceira(): string
     {
         return $this->transportadoraParceira;
     }
-    public function setTransportadoraPArceira(string $transportadoraParceira): void
+    public function setTransportadoraParceira(string $transportadoraParceira): void
     {
         $this->transportadoraParceira = $transportadoraParceira;
     }
@@ -95,7 +103,7 @@ class ProdutoFisico extends Produto
     if (substr($cepDestino, 0, 1) == "3") {
         return rand(1, 3);
     }
-
+    
     return rand(5, 8);
 }
 

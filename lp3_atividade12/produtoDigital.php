@@ -8,6 +8,16 @@ class ProdutoDigital extends Produto
     private int $limiteDownloadsPermitidos;
     private string $linkServidorNuvem;
 
+    public function __construct( int $codigo, string $nome, string $descricao, float $precoBase, int $quantidadeEstoque, bool $isAtivo, float $tamanhoArquivoMB,  string $formatoArquivo, int $limiteDownloadsPermitidos, string $linkServidorNuvem) {
+
+    parent::__construct( $codigo, $nome, $descricao, $precoBase, $quantidadeEstoque, $isAtivo);
+
+    $this->tamanhoArquivoMB = $tamanhoArquivoMB;
+    $this->formatoArquivo = $formatoArquivo;
+    $this->limiteDownloadsPermitidos = $limiteDownloadsPermitidos;
+    $this->linkServidorNuvem = $linkServidorNuvem;
+    
+}
 
     public function getTamanhoArquivoMB(): float
     {
@@ -68,13 +78,11 @@ class ProdutoDigital extends Produto
     }
 
     public function gerarLinkExclusivo(string $idUsuario): string
-    {
+{
+    $token = md5(time());
 
-        $token = md5(time());
-
-        return $this->getLinkServidorNuvem() . "/" . $token . "." . $this->getFormatoArquivo();
-
-    }
+    return $this->getLinkServidorNuvem() . "/" . $idUsuario . "_" .  $token . "." . $this->getFormatoArquivo();
+}
 
     public function revogarAcesso(string $idUsuario): void
     {

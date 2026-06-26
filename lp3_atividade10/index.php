@@ -11,6 +11,7 @@ $cc1->agencia = 5;
 $cc1->saldo = 500;
 $cc1->dataAbertura = "29/11";
 $cc1->status = 1;
+$cc1->limiteChequeEspecial = 500;
 
 $cc1->depositar(500);
 $cc1->sacar(150);

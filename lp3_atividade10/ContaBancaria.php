@@ -8,6 +8,7 @@ class ContaBancaria
     public int $agencia;
     public float $saldo;
     public string $dataAbertura;
+
     public int $status;
 
 
@@ -90,8 +91,7 @@ class ContaBancaria
         if ($this->saldo != 0) {
 
             echo "Conta precisa estar zerada.<br>";
-
-            return;
+            
         }
 
         $this->status = 0;
