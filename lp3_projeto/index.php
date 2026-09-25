@@ -24,8 +24,12 @@ if (empty($uri)) {
 
 // Tabela de Roteamento (Mapeamento de Rotas)
 $rotas = [
-    '/'               => ['controller' => 'HomeController',    'metodo' => 'index'],
-    '/empresa'               => ['controller' => 'HomeController',    'metodo' => 'sobre'],
+    '/' => ['controller' => 'HomeController', 'metodo' => 'index'],
+    '/empresa' => ['controller' => 'HomeController', 'metodo' => 'sobre'],
+    '/usuarios' => ['controller' => 'UsuarioController', 'metodo' => 'index'],
+    '/usuarios/adicionar' => ['controller' => 'UsuarioController', 'metodo' => 'adicionar'],
+    '/usuarios/editar' => ['controller' => 'UsuarioController', 'metodo' => 'editar'],
+    '/usuarios/excluir' => ['controller' => 'UsuarioController', 'metodo' => 'excluir'],
 ];
 
 // Verificação de existência da rota
