@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Autoload simples de controllers e models
 spl_autoload_register(function ($class_name) {
     if (file_exists(__DIR__ . '/controllers/' . $class_name . '.php')) {
@@ -51,6 +56,17 @@ $rotas = [
     '/filmes/adicionar' => ['controller' => 'FilmeController', 'metodo' => 'adicionar'],
     '/filmes/editar' => ['controller' => 'FilmeController', 'metodo' => 'editar'],
     '/filmes/excluir' => ['controller' => 'FilmeController', 'metodo' => 'excluir'],
+
+    '/livros' => ['controller' => 'LivroController', 'metodo' => 'index'],
+    '/livros/adicionar' => ['controller' => 'LivroController', 'metodo' => 'adicionar'],
+    '/livros/editar' => ['controller' => 'LivroController', 'metodo' => 'editar'],
+    '/livros/excluir' => ['controller' => 'LivroController', 'metodo' => 'excluir'],
+
+    '/generos' => ['controller' => 'GeneroController', 'metodo' => 'index'],
+    '/generos/adicionar' => ['controller' => 'GeneroController', 'metodo' => 'adicionar'],
+    '/generos/editar' => ['controller' => 'GeneroController', 'metodo' => 'editar'],
+    '/generos/excluir' => ['controller' => 'GeneroController', 'metodo' => 'excluir'],
+
 ];
 
 // Verificação de existência da rota
